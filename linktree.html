@@ -472,39 +472,39 @@
   </div><!-- /page-wrapper -->
 
   <script>
-        (function () {
-            var heroSection = document.getElementById('hero-section');
-            var heroOverlay = document.getElementById('hero-overlay');
-            var heroLogoWrap = document.getElementById('hero-logo-wrap');
-            var heroHeight = heroSection ? heroSection.offsetHeight : 320;
- 
-            function onScroll() {
-                var scrollY = window.scrollY || window.pageYOffset;
-                var ratio = Math.min(scrollY / heroHeight, 1);
- 
-                heroLogoWrap.style.opacity = Math.max(1 - ratio * 1.8, 0);
- 
-                var topStop = Math.max(40 - ratio * 40, 0);
-                var botStop = Math.max(100 - ratio * 60, topStop + 5);
-                heroOverlay.style.background =
-                    'linear-gradient(180deg, transparent ' + topStop + '%, #74A0CC ' + botStop + '%)';
-            }
- 
-            window.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
- 
-            var shareBtn = document.getElementById('share-btn');
-            if (shareBtn) {
-                shareBtn.addEventListener('click', function () {
-                    if (navigator.share) {
-                        navigator.share({ title: 'brïk.', url: window.location.href });
-                    } else if (navigator.clipboard) {
-                        navigator.clipboard.writeText(window.location.href);
-                    }
-                });
-            }
-        })();
-    </script>
+    (function () {
+      var heroSection = document.getElementById('hero-section');
+      var heroOverlay = document.getElementById('hero-overlay');
+      var heroLogoWrap = document.getElementById('hero-logo-wrap');
+      var heroHeight = heroSection ? heroSection.offsetHeight : 320;
+
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var ratio = Math.min(scrollY / heroHeight, 1);
+
+        heroLogoWrap.style.opacity = Math.max(1 - ratio * 1.8, 0);
+
+        var topStop = Math.max(40 - ratio * 40, 0);
+        var botStop = Math.max(100 - ratio * 60, topStop + 5);
+        heroOverlay.style.background =
+          'linear-gradient(180deg, transparent ' + topStop + '%, #74A0CC ' + botStop + '%)';
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var shareBtn = document.getElementById('share-btn');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', function () {
+          if (navigator.share) {
+            navigator.share({ title: 'brïk.', url: window.location.href });
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(window.location.href);
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 
